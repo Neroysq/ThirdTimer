@@ -41,9 +41,22 @@ startButton.addEventListener('click', function() {
 });
 
 function updateDisplays() {
-    workTimerDisplay.textContent = `Work Time: ${formatTime(workSeconds)}`;
-    restTimerDisplay.textContent = `Rest Time: ${formatTime(restSeconds)}`;
+    // Assuming a shorter duration for full scale, e.g., 15 minutes for work and proportionate for rest
+    const workScaleMax = 15 * 60; // 15 minutes in seconds
+    const restScaleMax = workScaleMax / 3; // One third of the workScaleMax for rest
+
+    const workPercentage = (workSeconds / workScaleMax) * 100;
+    const restPercentage = (restSeconds / restScaleMax) * 100;
+
+    // Update numerical display
+    document.getElementById('workTimeText').textContent = formatTime(workSeconds);
+    document.getElementById('restTimeText').textContent = formatTime(restSeconds);
+
+    // Update progress bar widths
+    document.getElementById('workTimer').style.width = `${Math.min(workPercentage, 100)}%`;
+    document.getElementById('restTimer').style.width = `${Math.min(restPercentage, 100)}%`;
 }
+
 
 function formatTime(seconds) {
     const hours = Math.floor(seconds / 3600);

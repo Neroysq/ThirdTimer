@@ -8,10 +8,15 @@
 </head>
 <body>
     <div id="app">
-        <button id="startWorkTimer">Start to work</button>
-        <div id="workTimer">Work Time: 00:00:00</div>
-        <!-- <button id="startRestTimer" disabled>Start Rest Timer</button> -->
-        <div id="restTimer">Rest Time: 00:00:00</div>
+        <button id="startWorkTimer" class="mdc-button mdc-button--raised">Start to Work</button>
+        <div class="timer">
+            <div class="timer-label">Work Time: <span id="workTimeText">00:00:00</span></div>
+            <div class="progress-bar"><div id="workTimer" class="progress"></div></div>
+        </div>
+        <div class="timer">
+            <div class="timer-label">Rest Time: <span id="restTimeText">00:00:00</span></div>
+            <div class="progress-bar"><div id="restTimer" class="progress"></div></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
