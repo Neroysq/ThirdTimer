@@ -1,0 +1,13 @@
+body, button, div {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#app {
+    text-align: center;
+}
