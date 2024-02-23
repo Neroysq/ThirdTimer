@@ -1,2 +1,2 @@
 # ThirdTimer
-You earn your rest time by working
+You earn 1 free second for every 3 seconds you work.
